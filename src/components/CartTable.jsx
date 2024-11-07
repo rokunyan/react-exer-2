@@ -88,7 +88,7 @@ const CartTable = ({productList, cartList, onDecrement, onIncrement, onDelete}) 
                 )}`}</TableCell >
                 <TableCell align='center'>
                   <button
-                    onClick={() => onDecrement(row.id)}
+                    onClick={() => {row.qty === 1 ? onDelete(row.id): onDecrement(row.id)}}
                     className="btn btn-secondary"
                     style={{ margin: "2px" }}
                   >
